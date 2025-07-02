@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciyaartoyda - Sahal Academy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+    .players-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 0.5rem;
+      margin: 2rem 0;
+    }
+    .player-card {
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 8px 32px rgba(40,167,69,0.16);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      border: 3px solid #28a74533;
+      transition: box-shadow 0.28s, border-color 0.28s, transform 0.28s;
+      width: 100%;
+      max-width: 370px;
+      min-width: 280px;
+      margin: 0 auto;
+    }
+    .player-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+      border-radius: 22px;
+      box-shadow: 0 4px 32px rgba(40,167,69,0.10), 0 0 0 4px #fff inset;
+      transition: filter 0.28s, box-shadow 0.28s, transform 0.28s;
+      position: relative;
+      z-index: 1;
+    }
+    .player-card-overlay {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 35%;
+      background: linear-gradient(0deg,rgba(40,167,69,0.92) 90%,rgba(40,167,69,0.0) 100%);
+      color: #fff;
+      padding: 1.1rem 1.3rem 0.7rem 1.3rem;
+      border-radius: 0 0 22px 22px;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.38), 0 1px 0 #222;
+      font-family: inherit;
+      opacity: 1;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      pointer-events: none;
+    }
+    .player-card-overlay div:first-child {
+      font-size: 1.45rem;
+      font-weight: 900;
+      margin-bottom: 0.2rem;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+      text-align: left;
+    }
+    .player-card-overlay div:last-child {
+      font-size: 1.13rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+      text-align: left;
+    }
+    .player-card-overlay b {
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.38), 0 1px 0 #222;
+    }
+    .player-card:hover {
+      box-shadow: 0 16px 48px rgba(40,167,69,0.22);
+      border-color: #28a745;
+      transform: translateY(-12px) scale(1.035);
+      z-index: 2;
+    }
+    .player-card:hover img {
+      filter: brightness(1.08) saturate(1.12) contrast(1.04);
+      box-shadow: 0 8px 48px 0 rgba(40,167,69,0.18), 0 0 0 4px #fff inset;
+      transform: scale(1.04);
+    }
+    .player-card-img-gradient {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; top: 0; bottom: 0;
+      z-index: 1;
+      pointer-events: none;
+      border-radius: 22px 22px 22px 22px;
+      background: linear-gradient(180deg,rgba(40,167,69,0.08) 0%,rgba(40,167,69,0.0) 60%,rgba(40,167,69,0.18) 100%);
+    }
+    @media (max-width: 900px) {
+      .players-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.1rem; }
+      .player-card img { height: 120px; }
+      .player-card { border-radius: 14px; min-width: 160px; max-width: 100%; }
+      .player-card-overlay { border-radius: 0 0 14px 14px; padding: 0.7rem 0.7rem 0.6rem 0.7rem; }
+    }
+    .player-hero-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2rem 0 1.5rem 0;
+    }
+    .player-hero-banner {
+      max-width: 320px;
+      min-width: 220px;
+      flex: 1 1 220px;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 4px 32px rgba(40,167,69,0.10);
+      border: 3px solid transparent;
+      background-clip: padding-box, border-box;
+      background-origin: padding-box, border-box;
+      background-image: linear-gradient(#fff, #fff), linear-gradient(120deg, #28a745 0%, #b6f5c6 100%);
+      position: relative;
+      transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s, border-color 0.25s;
+      cursor: pointer;
+    }
+    .player-hero-banner:hover, .player-hero-banner:focus {
+      transform: translateY(-14px) scale(1.045);
+      box-shadow: 0 12px 40px rgba(40,167,69,0.18);
+      border-color: #28a745;
+      z-index: 2;
+    }
+    .player-hero-banner img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(1) saturate(1.08);
+      transition: filter 0.2s;
+    }
+    .player-hero-banner .player-hero-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(0deg,rgba(40,167,69,0.38) 80%,rgba(40,167,69,0.0) 100%);
+      color: #fff;
+      padding: 0.45rem 0.7rem 0.4rem 0.7rem;
+      border-radius: 0 0 24px 24px;
+      box-shadow: 0 2px 12px rgba(40,167,69,0.10);
+      font-size: 1.18rem;
+      font-weight: 700;
+      text-shadow: 0 3px 12px rgba(0,0,0,0.32), 0 1px 0 #222;
+      opacity: 1;
+    }
+    .player-hero-banner .player-hero-name {
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #fff;
+      text-shadow: 0 3px 12px rgba(0,0,0,0.32), 0 1px 0 #222;
+      -webkit-text-stroke: 0.5px #222;
+    }
+    .player-hero-banner .player-hero-name i {
+      font-size: 1.1rem;
+      color: #fff;
+      opacity: 0.85;
+      -webkit-text-stroke: 0.5px #222;
+    }
+    .player-hero-banner .player-hero-info {
+      font-size: 1.08rem;
+      margin-top: 0.18rem;
+      letter-spacing: 0.2px;
+      opacity: 1;
+      color: #fff;
+      font-weight: 700;
+      text-shadow: 0 3px 12px rgba(0,0,0,0.32), 0 1px 0 #222;
+      -webkit-text-stroke: 0.4px #222;
+    }
+    @media (max-width: 700px) {
+      .player-hero-row { flex-direction: column; gap: 1rem; }
+      .player-hero-banner { max-width: 100%; min-width: 0; }
+    }
+    #addPlayerBtn:hover {
+      background: linear-gradient(135deg,#43e97b 0%,#38f9d7 100%);
+      box-shadow: 0 12px 40px rgba(40,167,69,0.28);
+    }
+    #addPlayerBtn:hover #addPlayerTooltip {
+      opacity: 1;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imges/logo.jpg" alt="Sahal Academy Logo">
+                </a>
+            </div>
+            <button class="hamburger-menu" aria-label="Open Menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="players.html" class="active">Players</a></li>
+                <li><a href="training.html">Training</a></li>
+                
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li id="joinUsLi"><a href="register.html" class="btn">Join Us</a></li>
+                <li id="profileLi" style="display:none;">
+                  <img id="profileIcon" src="" alt="Profile" style="width:36px;height:36px;border-radius:50%;object-fit:cover;vertical-align:middle;cursor:pointer;">
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Ciyaartoyda Akadeemiyada</h1>
+        </section>
+
+        <div class="player-hero-row">
+            
+        </div>
+
+        <section class="players-section">
+            <h2>Ciyaartoyda</h2>
+            <div id="players-list" class="players-grid"></div>
+        </section>
+
+        <section class="achievements">
+            <h2>Guulaha Ciyaartoyda</h2>
+            <ul>
+                <li>🏆 waan suganaa sanad kan 2025</li>
+            </ul>
+        </section>
+
+        <!-- Add Player Button (only for teacher) -->
+        <button id="addPlayerBtn" style="display:none;position:fixed;right:32px;bottom:32px;z-index:100;box-shadow:0 8px 32px rgba(40,167,69,0.22);background:linear-gradient(135deg,#28a745 0%,#6ee7b7 100%);border:none;width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:box-shadow 0.2s,background 0.2s;cursor:pointer;" title="Kudar Player Cusub">
+          <span style="font-size:2.6rem;color:#fff;display:flex;align-items:center;justify-content:center;line-height:1;">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" stroke="#fff" stroke-width="2.5" fill="none"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          </span>
+          <span style="position:absolute;bottom:80px;right:0;left:auto;background:#222;color:#fff;padding:0.4em 1em;border-radius:8px;font-size:1rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.2s;" id="addPlayerTooltip">Kudar Player Cusub</span>
+        </button>
+        <!-- Add Player Modal -->
+        <div id="addPlayerModalBg" class="modal-bg">
+          <div class="jadwal-modal">
+            <span class="close-modal-x" id="closeAddPlayerX">&times;</span>
+            <h2>Kudar Player Cusub</h2>
+            <form id="addPlayerForm">
+              <input type="text" id="playerName" placeholder="Magaca Player" required>
+              <input type="text" id="playerNumber" placeholder="Number" required>
+              <input type="text" id="playerPosition" placeholder="Booska" required>
+              <input type="file" id="playerPhoto" accept="image/*" required>
+              <div class="modal-actions">
+                <button type="button" class="cancel" id="cancelAddPlayerBtn">Cancel</button>
+                <button type="submit">Add</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                     <a href="index.html"><img src="imges/logo.jpg" alt="Sahal Academy Logo"></a>
+                </div>
+                <p>Horumarinta hibada da'yarta kubadda cagta ee Somaliland, anagoo dhiseyna anshaxa iyo horumarka shaqsiyeed.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Linkiyo Degdeg ah</h3>
+                <ul>
+                    <li><a href="about.html">Nagu Saabsan</a></li>
+                    <li><a href="players.html">Ciyaartoyda</a></li>
+                    <li><a href="training.html">Tababarka</a></li>
+                    <li><a href="register.html">Isdiiwaan Gali</a></li>
+                    <li><a href="contact.html">Nala Soo Xiriir</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Nala Soo Xiriir</h3>
+                <p>Wadada Maka Al-Mukarama<br>Hargeisa, Somaliland</p>
+                <p><strong>Email:</strong> info@aminacademy.so</p>
+                <p><strong>Tel:</strong> +252 63 4656568</p>
+            </div>
+            <div class="footer-social">
+                <h3>Nagu Xirnow</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sahal Academy. Xuquuqda way xifdisan tahay.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      const user = JSON.parse(localStorage.getItem('sahal_user'));
+      const playersList = document.getElementById('players-list');
+      const addPlayerBtn = document.getElementById('addPlayerBtn');
+      const addPlayerModalBg = document.getElementById('addPlayerModalBg');
+      const closeAddPlayerX = document.getElementById('closeAddPlayerX');
+      const cancelAddPlayerBtn = document.getElementById('cancelAddPlayerBtn');
+      const addPlayerForm = document.getElementById('addPlayerForm');
+      let players = JSON.parse(localStorage.getItem('sahal_players')) || [];
+
+      // Navbar logic
+      const joinUsLi = document.getElementById('joinUsLi');
+      const profileLi = document.getElementById('profileLi');
+      const profileIcon = document.getElementById('profileIcon');
+      if (user && user.photo) {
+        joinUsLi.style.display = 'none';
+        profileLi.style.display = 'inline-block';
+        profileIcon.src = user.photo;
+        profileIcon.title = user.name;
+        profileIcon.onclick = function() {
+          if (confirm('Ma hubtaa inaad logout samaynayso?')) {
+            // Remove user from sahal_players if player
+            if(user.type === 'player') {
+              players = players.filter(p => !(p.name === user.name && p.number === user.number && p.position === user.position));
+              localStorage.setItem('sahal_players', JSON.stringify(players));
+            }
+            localStorage.removeItem('sahal_user');
+            window.location.reload();
+          }
+        };
+      } else {
+        joinUsLi.style.display = 'inline-block';
+        profileLi.style.display = 'none';
+      }
+
+      // Only teacher can add player
+      if (user && user.type === 'teacher') {
+        addPlayerBtn.style.display = 'flex';
+        addPlayerBtn.onclick = () => addPlayerModalBg.classList.add('active');
+        closeAddPlayerX.onclick = cancelAddPlayerBtn.onclick = () => addPlayerModalBg.classList.remove('active');
+        addPlayerForm.onsubmit = function(e) {
+          e.preventDefault();
+          const name = document.getElementById('playerName').value;
+          const number = document.getElementById('playerNumber').value;
+          const position = document.getElementById('playerPosition').value;
+          const photo = document.getElementById('playerPhoto').files[0];
+          const reader = new FileReader();
+          reader.onload = function(ev) {
+            players.push({ name, number, position, photo: ev.target.result });
+            localStorage.setItem('sahal_players', JSON.stringify(players));
+            addPlayerModalBg.classList.remove('active');
+            renderPlayers();
+          };
+          reader.readAsDataURL(photo);
+        };
+      } else {
+        // Hide button and modal for player users
+        addPlayerBtn.style.display = 'none';
+        addPlayerModalBg.style.display = 'none';
+      }
+
+      function renderPlayers() {
+        playersList.innerHTML = '';
+        players.forEach(player => {
+          playersList.innerHTML += `
+            <div class="player-card">
+              <img src="${player.photo}" alt="Sawirka">
+              <div class="player-card-img-gradient"></div>
+              <div class="player-card-overlay">
+                <div>${player.name}</div>
+                <div>Number: <b>${player.number}</b> &nbsp; | &nbsp; Da'da: <b>${player.age ? player.age : ''}</b> &nbsp; | &nbsp; Booska: <b>${player.position}</b></div>
+              </div>
+            </div>
+          `;
+        });
+      }
+      renderPlayers();
+    });
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html> 

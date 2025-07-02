@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Sahal Academy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .gallery-item {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 18px rgba(40,167,69,0.10);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            transition: filter 0.2s;
+        }
+        .gallery-item:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(40,167,69,0.18);
+        }
+        .gallery-item:hover img {
+            filter: brightness(0.85);
+        }
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(0deg,rgba(40,167,69,0.85) 60%,rgba(40,167,69,0.0) 100%);
+            color: #fff;
+            padding: 0.7rem 1rem 0.5rem 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.2s;
+            border-radius: 0 0 14px 14px;
+        }
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+        @media (max-width: 600px) {
+            .gallery-item img { height: 120px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imges/logo.jpg" alt="Sahal Academy Logo">
+                </a>
+            </div>
+            <button class="hamburger-menu" aria-label="Open Menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="training.html">Tababarka</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+               
+                <li><a href="contact.html">Contact Us</a></li>
+                <li id="joinUsLi"><a href="register.html" class="btn" id="joinUsBtn">Join Us</a></li>
+                <li id="profileLi" style="display:none;">
+                    <img id="profileIcon" src="" alt="Profile" style="height:36px;width:36px;border-radius:50%;cursor:pointer;border:2px solid #28a745;">
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1935&auto=format&fit=crop');">
+            <div class="page-header-overlay">
+                 <h1>Xusuus & Guulo</h1>
+                 <p>Ka daawo sawirrada iyo muuqaallada ugu xiisaha badan ee akadeemiyadeena.</p>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="imges/11.jpg" alt="sahalacademy">
+                    <div class="gallery-item-overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="imges/22.jpg" alt="sahalacademy">
+                    <div class="gallery-item-overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="imges/33.jpg" alt="sahalacademy">
+                    <div class="gallery-item-overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="imges/44.jpg" alt="sahalacademy">
+                    <div class="gallery-item-overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="imges/55.jpg" alt="sahalacademy">
+                    <div class="gallery-item-overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="imges/66.jpg" alt="sahalacademy">
+                    <div class="gallery-item-overlay"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section video-gallery-section">
+             <h2 class="section-title">Muuqaaladeena</h2>
+             <div class="gallery-grid-videos">
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                 <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+             </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                     <a href="index.html"><img src="imges/logo.jpg" alt="Sahal Academy Logo"></a>
+                </div>
+                <p>Horumarinta hibada da'yarta kubadda cagta ee Somaliland, anagoo dhiseyna anshaxa iyo horumarka shaqsiyeed.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Linkiyo Degdeg ah</h3>
+                <ul>
+                    <li><a href="about.html">Nagu Saabsan</a></li>
+                    <li><a href="players.html">Ciyaartoyda</a></li>
+                    <li><a href="training.html">Tababarka</a></li>
+                    <li><a href="jadwal.html">Jadwalka</a></li>
+                    <li><a href="register.html">Isdiiwaan Gali</a></li>
+                    <li><a href="contact.html">Nala Soo Xiriir</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Nala Soo Xiriir</h3>
+                <p>Wadada Maka Al-Mukarama<br>Hargeisa, Somaliland</p>
+                <p><strong>Email:</strong> info@aminacademy.so</p>
+                <p><strong>Tel:</strong> +252 63 4656568</p>
+            </div>
+            <div class="footer-social">
+                <h3>Nagu Xirnow</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sahal Academy. Xuquuqda way xifdisan tahay.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+    window.addEventListener('DOMContentLoaded', function() {
+        const user = JSON.parse(localStorage.getItem('sahal_user'));
+        const joinUsLi = document.getElementById('joinUsLi');
+        const profileLi = document.getElementById('profileLi');
+        const profileIcon = document.getElementById('profileIcon');
+        if (user && user.photo) {
+            joinUsLi.style.display = 'none';
+            profileLi.style.display = 'inline-block';
+            profileIcon.src = user.photo;
+            profileIcon.title = user.name;
+            profileIcon.onclick = function() {
+                if (confirm('Ma hubtaa inaad logout samaynayso?')) {
+                    localStorage.removeItem('sahal_user');
+                    window.location.reload();
+                }
+            };
+        } else {
+            joinUsLi.style.display = 'inline-block';
+            profileLi.style.display = 'none';
+        }
+    });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isdiiwaangeli - Sahal Academy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      .register-container { max-width: 420px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 4px 24px rgba(40,167,69,0.08); padding: 2rem; }
+      .register-container h2 { text-align: center; color: #28a745; margin-bottom: 1.5rem; }
+      .register-container .form-group { margin-bottom: 1.2rem; }
+      .register-container label { display: block; margin-bottom: 0.4rem; font-weight: 500; }
+      .register-container input, .register-container select { width: 100%; padding: 0.7rem; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; }
+      .register-container button { width: 100%; margin-top: 1rem; }
+      .register-container .step { display: none; }
+      .register-container .step.active { display: block; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imges/logo.jpg" alt="Sahal Academy Logo">
+                </a>
+            </div>
+            <button class="hamburger-menu" aria-label="Open Menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="training.html">Tababarka</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="register.html" class="active btn">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Nagu Soo Biir</h1>
+        </section>
+
+        <section class="registration-section">
+            <div class="register-container">
+                <form id="registerStep1" class="step active">
+                    <h2>Isdiiwaangeli</h2>
+                    <div class="form-group">
+                        <label for="regName">Magacaaga:</label>
+                        <input type="text" id="regName" name="regName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Dooro nooca:</label>
+                        <select id="regType" name="regType" required>
+                            <option value="">-- Doorasho --</option>
+                            <option value="player">Player</option>
+                            <option value="teacher">Teacher</option>
+                        </select>
+                    </div>
+                    <button type="button" id="continueBtn" class="btn">Continue</button>
+                </form>
+                <form id="registerPlayer" class="step">
+                    <h2>Isdiiwaangeli (Player)</h2>
+                    <div class="form-group">
+                        <label for="playerName">Magaca:</label>
+                        <input type="text" id="playerName" name="playerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="playerAge">Da'da:</label>
+                        <input type="number" id="playerAge" name="playerAge" min="5" max="30" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="playerPosition">Booska:</label>
+                        <input type="text" id="playerPosition" name="playerPosition" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="playerNumber">Numberka:</label>
+                        <input type="text" id="playerNumber" name="playerNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="playerPhoto">Sawirka:</label>
+                        <input type="file" id="playerPhoto" name="playerPhoto" accept="image/*" required>
+                    </div>
+                    <button type="submit" class="btn">Submit</button>
+                    <button type="button" id="backBtn" class="btn" style="background:#ccc;color:#222;">Back</button>
+                </form>
+                <form id="registerTeacher" class="step">
+                    <h2>Isdiiwaangeli (Teacher)</h2>
+                    <div class="form-group">
+                        <label for="teacherName">Magaca:</label>
+                        <input type="text" id="teacherName" name="teacherName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teacherNumber">Numberka:</label>
+                        <input type="text" id="teacherNumber" name="teacherNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teacherEmail">Email:</label>
+                        <input type="email" id="teacherEmail" name="teacherEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teacherPassword">Password:</label>
+                        <input type="password" id="teacherPassword" name="teacherPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teacherPhoto">Sawirka:</label>
+                        <input type="file" id="teacherPhoto" name="teacherPhoto" accept="image/*" required>
+                    </div>
+                    <button type="submit" class="btn">Submit</button>
+                    <button type="button" id="backTeacherBtn" class="btn" style="background:#ccc;color:#222;">Back</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                     <a href="index.html"><img src="imges/logo.jpg" alt="Sahal Academy Logo"></a>
+                </div>
+                <p>Horumarinta hibada da'yarta kubadda cagta ee Somaliland, anagoo dhiseyna anshaxa iyo horumarka shaqsiyeed.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Linkiyo Degdeg ah</h3>
+                <ul>
+                    <li><a href="about.html">Nagu Saabsan</a></li>
+                    <li><a href="players.html">Ciyaartoyda</a></li>
+                    <li><a href="training.html">Tababarka</a></li>
+                    <li><a href="register.html">Isdiiwaan Gali</a></li>
+                    <li><a href="contact.html">Nala Soo Xiriir</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Nala Soo Xiriir</h3>
+                <p>Wadada Maka Al-Mukarama<br>Hargeisa, Somaliland</p>
+                <p><strong>Email:</strong> info@aminacademy.so</p>
+                <p><strong>Tel:</strong> +252 63 4656568</p>
+            </div>
+            <div class="footer-social">
+                <h3>Nagu Xirnow</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sahal Academy. Xuquuqda way xifdisan tahay.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <!-- Ha ku darin js/register-modal.js halkan! Script-ka modal-ka waxa uu khuseeyaa index.html kaliya. -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        // Multi-step registration logic
+        const step1 = document.getElementById('registerStep1');
+        const playerForm = document.getElementById('registerPlayer');
+        const teacherForm = document.getElementById('registerTeacher');
+        const continueBtn = document.getElementById('continueBtn');
+        const backBtn = document.getElementById('backBtn');
+        const backTeacherBtn = document.getElementById('backTeacherBtn');
+        // Continue
+        continueBtn.onclick = function() {
+            const regType = document.getElementById('regType').value;
+            const regName = document.getElementById('regName').value;
+            if (!regType) { alert('Fadlan dooro nooca!'); return; }
+            if (!regName) { alert('Fadlan geli magaca!'); return; }
+            step1.classList.remove('active');
+            if (regType === 'player') {
+                playerForm.classList.add('active');
+                document.getElementById('playerName').value = regName;
+            } else {
+                teacherForm.classList.add('active');
+                document.getElementById('teacherName').value = regName;
+            }
+        };
+        // Back
+        backBtn.onclick = function() {
+            playerForm.classList.remove('active');
+            step1.classList.add('active');
+        };
+        backTeacherBtn.onclick = function() {
+            teacherForm.classList.remove('active');
+            step1.classList.add('active');
+        };
+        function toBase64(file, cb) {
+          const reader = new FileReader();
+          reader.onload = () => cb(reader.result);
+          reader.readAsDataURL(file);
+        }
+        // Player submit
+        if(document.getElementById('registerPlayer')){
+          document.getElementById('registerPlayer').onsubmit = function(e) {
+            e.preventDefault();
+            const name = document.getElementById('playerName').value;
+            const age = document.getElementById('playerAge').value;
+            const position = document.getElementById('playerPosition').value;
+            const number = document.getElementById('playerNumber').value;
+            const photo = document.getElementById('playerPhoto').files[0];
+            if (!photo) {
+              alert('Fadlan dooro sawirka!');
+              return;
+            }
+            toBase64(photo, function(base64) {
+              const player = {type: 'player', name, age, position, number, photo: base64};
+              localStorage.setItem('sahal_user', JSON.stringify(player));
+              // Save to sahal_players array
+              let players = JSON.parse(localStorage.getItem('sahal_players')) || [];
+              players.push({ name, age, position, number, photo: base64 });
+              localStorage.setItem('sahal_players', JSON.stringify(players));
+              window.location.href = 'index.html';
+            });
+          };
+        }
+        // Teacher submit
+        if(document.getElementById('registerTeacher')){
+          document.getElementById('registerTeacher').onsubmit = function(e) {
+            e.preventDefault();
+            const name = document.getElementById('teacherName').value;
+            const number = document.getElementById('teacherNumber').value;
+            const email = document.getElementById('teacherEmail').value;
+            const password = document.getElementById('teacherPassword').value;
+            const photo = document.getElementById('teacherPhoto').files[0];
+            toBase64(photo, function(base64) {
+              const teacher = {type: 'player', name, number, email, password, photo: base64};
+              localStorage.setItem('sahal_user', JSON.stringify(teacher));
+              window.location.href = 'index.html';
+            });
+          };
+        }
+    </script>
+</body>
+</html> 

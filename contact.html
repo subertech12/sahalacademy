@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nala Soo Xiriir - Sahal Academy</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imges/logo.jpg" alt="Sahal Academy Logo">
+                </a>
+            </div>
+            <button class="hamburger-menu" aria-label="Open Menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="training.html">Tababarka</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+              
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+                <li id="joinUsLi"><a href="register.html" class="btn" id="joinUsBtn">Join Us</a></li>
+                <li id="profileLi" style="display:none;">
+                    <img id="profileIcon" src="" alt="Profile" style="height:36px;width:36px;border-radius:50%;cursor:pointer;border:2px solid #28a745;">
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header" style="background-image: url('https://images.unsplash.com/photo-1464983953574-0892a716854b?q=80&w=2070&auto=format&fit=crop');">
+            <div class="page-header-overlay">
+                <h1>Nala Soo Xiriir</h1>
+                <p>Waxaan diyaar u nahay inaan ka jawaabno su'aalahaaga iyo talooyinkaaga!</p>
+            </div>
+        </section>
+
+        <section class="contact-section modern-contact">
+            <div class="contact-container modern-contact-grid">
+                <div class="contact-form modern-card">
+                    <h2>Soo Dir Fariin</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Magacaaga:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email-kaaga:</label>
+                            <input type="email" id="contactEmail" name="contactEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Fariintaada:</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Dir Fariinta</button>
+                    </form>
+                </div>
+
+                <div class="contact-info modern-card">
+                    <h2>Macluumaadka Xiriirka</h2>
+                    <ul class="contact-details-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Wadada Maka Al-Mukarama, Hargeisa, Somaliland</li>
+                        <li><i class="fas fa-phone"></i> +252 63 4656568</li>
+                        <li><i class="fas fa-envelope"></i> info@aminacademy.so</li>
+                    </ul>
+                    <div class="social-links-contact modern-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15632.96985148671!2d44.06033483955078!3d9.566839999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1628c73a8707d727%3A0x1d88de04f849076!2sHargeisa%20Stadium!5e0!3m2!1sen!2sso!4v1672526177899!5m2!1sen!2sso" width="100%" height="200" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                     <a href="index.html"><img src="imges/logo.jpg" alt="Sahal Academy Logo"></a>
+                </div>
+                <p>Horumarinta hibada da'yarta kubadda cagta ee Somaliland, anagoo dhiseyna anshaxa iyo horumarka shaqsiyeed.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Linkiyo Degdeg ah</h3>
+                <ul>
+                    <li><a href="about.html">Nagu Saabsan</a></li>
+                    <li><a href="players.html">Ciyaartoyda</a></li>
+                    <li><a href="training.html">Tababarka</a></li>
+                    <li><a href="jadwal.html">Jadwalka</a></li>
+                    <li><a href="register.html">Isdiiwaan Gali</a></li>
+                    <li><a href="contact.html">Nala Soo Xiriir</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Nala Soo Xiriir</h3>
+                <p>Wadada Maka Al-Mukarama<br>Hargeisa, Somaliland</p>
+                <p><strong>Email:</strong> info@aminacademy.so</p>
+                <p><strong>Tel:</strong> +252 63 4656568</p>
+            </div>
+            <div class="footer-social">
+                <h3>Nagu Xirnow</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sahal Academy. Xuquuqda way xifdisan tahay.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+    window.addEventListener('DOMContentLoaded', function() {
+        const user = JSON.parse(localStorage.getItem('sahal_user'));
+        const joinUsLi = document.getElementById('joinUsLi');
+        const profileLi = document.getElementById('profileLi');
+        const profileIcon = document.getElementById('profileIcon');
+        if (user && user.photo) {
+            joinUsLi.style.display = 'none';
+            profileLi.style.display = 'inline-block';
+            profileIcon.src = user.photo;
+            profileIcon.title = user.name;
+            profileIcon.onclick = function() {
+                if (confirm('Ma hubtaa inaad logout samaynayso?')) {
+                    localStorage.removeItem('sahal_user');
+                    window.location.reload();
+                }
+            };
+        } else {
+            joinUsLi.style.display = 'inline-block';
+            profileLi.style.display = 'none';
+        }
+    });
+    </script>
+</body>
+</html> 

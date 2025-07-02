@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahal Academy - Bogga Hore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imges/logo.jpg" alt="Sahal Academy Logo">
+                </a>
+            </div>
+            <button class="hamburger-menu" aria-label="Open Menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="players.html">Players</a></li>
+                <li><a href="training.html">Tababarka</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li id="joinUsLi"><a href="register.html" class="btn">Join Us</a></li>
+                <li id="profileLi" style="display:none;">
+                  <img id="profileIcon" src="" alt="Profile" style="width:36px;height:36px;border-radius:50%;object-fit:cover;vertical-align:middle;cursor:pointer;">
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="slideshow-container">
+                <div class="slide fade" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1935&auto=format&fit=crop');">
+                     <div class="slide-caption">Tababar Xirfad Sare Leh</div>
+                </div>
+                <div class="slide fade" style="background-image: url('https://media.istockphoto.com/id/1490088045/photo/soccer-ball-on-the-grass-in-the-football-field.jpg?s=1024x1024&w=is&k=20&c=8trgMa5jvlSdc45rLKhyx3X7i_OwMwzA1Ijthnm_ph4=');">
+                    <div class="slide-caption">Soo Saarista Horyaalada Mustaqbalka</div>
+                </div>
+                <div class="slide fade" style="background-image: url('https://images.unsplash.com/photo-1521422421222-33a1e26b3824?q=80&w=2070&auto=format&fit=crop');">
+                    <div class="slide-caption">Guul & Wada-jir</div>
+                </div>
+
+                <!-- Next and previous buttons -->
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+            </div>
+             <!-- The dots/circles -->
+            <div class="dots-container">
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+            </div>
+
+            <div class="hero-text">
+                <h1>Soo Dhawoow Sahal Academy</h1>
+                <p>Sahal Academy waa xarun lagu tababaro da'yarta jecel kubadda cagta, waxaan hiigsaneynaa inaan soo saarno ciyaartoy xirfad leh oo mustaqbal ku leh ciyaaraha. Hadafkeenu waa inaan bixinno tababar tayo sare leh, anagoo dhiseyna anshaxa iyo horumarka shaqsiyeed ee ciyaartoy kasta.</p>
+                <a href="register.html" class="btn">Isdiiwaan Gali Hadda</a>
+            </div>
+        </section>
+
+        <section class="intro">
+            <div class="intro-grid">
+                <div class="intro-text">
+                    <h2>Ku Saabsan Academy-geena</h2>
+                    <p>Sahal Academy waa xarun lagu tababaro da'yarta jecel kubadda cagta, waxaan hiigsaneynaa inaan soo saarno ciyaartoy xirfad leh oo mustaqbal ku leh ciyaaraha. Hadafkeenu waa inaan bixinno tababar tayo sare leh, anagoo dhiseyna anshaxa iyo horumarka shaqsiyeed ee ciyaartoy kasta.</p>
+                     <a href="about.html" class="btn">Wax Badan Ogoow</a>
+                </div>
+                 <div class="intro-image">
+                    <img src="imges/about.jpg" alt="Kooxda Akadeemiyada">
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <h2 class="section-title">Maxaad Noo Dooranaysaa?</h2>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <i class="fas fa-users"></i>
+                    <h3>Tababarayaal Aqoon Leh</h3>
+                    <p>Tababarayaal shati haysta oo leh waayo-aragnimo caalami ah.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-futbol"></i>
+                    <h3>Tas-hiilaad Casri ah</h3>
+                    <p>Garoomo cagaaran iyo qalab tababar oo dhammaystiran.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Horumar Shakhsiyeed</h3>
+                    <p>Waxaan diiradda saarnaa korriinka farsamo iyo anshax ee ciyaartoyga.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="programs-preview-section">
+            <h2 class="section-title">Barnaamijyadeena</h2>
+            <div class="program-preview-grid">
+                <div class="program-preview-card">
+                    <img src="https://media.istockphoto.com/id/1183940092/photo/footballer-dribbling-ball-on-training-between-orange-cones-young-football-player-in-sports.jpg?s=1024x1024&w=is&k=20&c=SYUcS7FI0o_taPWbChqO0FFbPVnoMo--W3gNeR14Rd8=" alt="Tababarka Da'yarta">
+                    <div class="program-preview-info">
+                        <h3>Tababarka Da'yarta</h3>
+                        <p>Baridda aasaaska kubadda cagta ee da'yarta soo koreysa.</p>
+                    </div>
+                </div>
+                <div class="program-preview-card">
+                    <img src="imges/shir.jpg">
+                    <div class="program-preview-info">
+                        <h3>Tababarka Sare</h3>
+                        <p>Diyaarinta ciyaartoyda u socota heerka xirfadeed.</p>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2 class="section-title">Maxay Ka Dheheen?</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <img src="imges/waalid.webp" alt="Waalid">
+                    <p>"Wiilkaygu horumar weyn ayuu sameeyay tan iyo markii uu ku biiray. Waa meel cajiib ah."</p>
+                    <span class="testimonial-author">- Aabe Waalid ah</span>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial-card">
+                     <img src="imges/zack.jpg" alt="Ciyaartoy">
+                    <p>"Tababarka halkan waa mid tayo sare leh. Waxaan dareemayaa inaan gaari karo riyadayda."</p>
+                    <span class="testimonial-author">- Cali Maxamed, Ciyaartoy</span>
+                     <div class="stars">★★★★★</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                     <a href="index.html"><img src="imges/logo.jpg" alt="Sahal Academy Logo"></a>
+                </div>
+                <p>Horumarinta hibada da'yarta kubadda cagta ee Somaliland, anagoo dhiseyna anshaxa iyo horumarka shaqsiyeed.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Linkiyo Degdeg ah</h3>
+                <ul>
+                    <li><a href="about.html">Nagu Saabsan</a></li>
+                    <li><a href="players.html">Ciyaartoyda</a></li>
+                    <li><a href="training.html">Tababarka</a></li>
+                   
+                    <li><a href="register.html">Isdiiwaan Gali</a></li>
+                    <li><a href="contact.html">Nala Soo Xiriir</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Nala Soo Xiriir</h3>
+                <p>Wadada Maka Al-Mukarama<br>Hargeisa, Somaliland</p>
+                <p><strong>Email:</strong> info@sahalacademy.so</p>
+                <p><strong>Tel:</strong> +252 63 4656568</p>
+            </div>
+            <div class="footer-social">
+                <h3>Nagu Xirnow</h3>
+                <div class="social-icons">
+                    <!-- Waxaad halkan gelin kartaa linkiyada saxda ah -->
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sahal Academy. Xuquuqda way xifdisan tahay.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Registration -->
+    <div id="registerModal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <span class="close-modal" id="closeModalBtn">&times;</span>
+        <form id="step1Form">
+          <h2>Isdiiwaangeli</h2>
+          <div class="form-group">
+            <label for="regName">Magacaaga:</label>
+            <input type="text" id="regName" name="regName" required>
+          </div>
+          <div class="form-group">
+            <label>Dooro nooca:</label>
+            <select id="regType" name="regType" required>
+              <option value="">-- Doorasho --</option>
+              <option value="player">Player</option>
+              <option value="teacher">Teacher</option>
+            </select>
+          </div>
+          <button type="button" id="continueBtn" class="btn">Continue</button>
+          <button type="button" id="cancelBtn" class="btn" style="background:#ccc;color:#222;">Cancel</button>
+        </form>
+        <form id="playerForm" style="display:none;">
+          <h2>Isdiiwaangeli (Player)</h2>
+          <div class="form-group">
+            <label for="playerName">Magaca:</label>
+            <input type="text" id="playerName" name="playerName" required>
+          </div>
+          <div class="form-group">
+            <label for="playerAge">Da'da:</label>
+            <input type="number" id="playerAge" name="playerAge" min="5" max="30" required>
+          </div>
+          <div class="form-group">
+            <label for="playerPosition">Booska:</label>
+            <input type="text" id="playerPosition" name="playerPosition" required>
+          </div>
+          <div class="form-group">
+            <label for="playerNumber">Numberka:</label>
+            <input type="text" id="playerNumber" name="playerNumber" required>
+          </div>
+          <div class="form-group">
+            <label for="playerPhoto">Sawirka:</label>
+            <input type="file" id="playerPhoto" name="playerPhoto" accept="image/*" required>
+          </div>
+          <button type="submit" class="btn">Submit</button>
+          <button type="button" id="backBtn" class="btn" style="background:#ccc;color:#222;">Back</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/register-modal.js"></script>
+    <!-- Waxaan ku daray Font Awesome si aan u isticmaalo astaamaha (icons) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      const user = JSON.parse(localStorage.getItem('sahal_user'));
+      const joinUsLi = document.getElementById('joinUsLi');
+      const profileLi = document.getElementById('profileLi');
+      const profileIcon = document.getElementById('profileIcon');
+      if (user && user.photo) {
+        joinUsLi.style.display = 'none';
+        profileLi.style.display = 'inline-block';
+        profileIcon.src = user.photo;
+        profileIcon.title = user.name;
+        profileIcon.onclick = function() {
+          if (confirm('Ma hubtaa inaad logout samaynayso?')) {
+            localStorage.removeItem('sahal_user');
+            window.location.reload();
+          }
+        };
+      } else {
+        joinUsLi.style.display = 'inline-block';
+        profileLi.style.display = 'none';
+      }
+    });
+    </script>
+</body>
+</html> 
